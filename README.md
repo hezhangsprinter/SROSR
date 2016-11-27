@@ -14,4 +14,4 @@ The tail distribution of matched and sum of non-mathced will be saved.
 ** We also include one sample in the code. You can directly calculating the F-measure and Accuracy by running
 'object_src_fmeas.m'
 
-** All the code is writen in Ubuntu 14.04. If you are using windows and other systems, make sure you change the '/' to '\'.
+** All the code is writen in Ubuntu 14.04. 
