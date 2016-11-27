@@ -13,3 +13,5 @@ The tail distribution of matched and sum of non-mathced will be saved.
 'object_src_fmeas.m'
 
 ** All the code is writen in Ubuntu 14.04. If you are using windows and other systems, make sure you change the '/' to '\'.
+
+**  We use the optimization tool box from http://www.cs.ubc.ca/~mpf/spgl1/index.html  
