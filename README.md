@@ -1,5 +1,6 @@
 # SROSR
 This is the implementation of 'Sparse Representation based Open-set Recognition' T-PAMI
+
 1. Generating your training samples and testing samples and  proceeding training in the meantime by using 'train_together.m'.
    Proceeding SRC and save the reconstruction error using ''
 
