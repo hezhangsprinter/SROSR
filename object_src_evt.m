@@ -87,7 +87,7 @@ wwww=0;
 
 
 %Add out of class test_sample (open-set test) on to within class test sample
-test_class_out=1;
+test_class_out=40;
 for i=1:test_class_out
     rand_out_test=rand_class(num_class_train+1:end);
     rand_index=ceil((257-num_class_train)*rand(1));
@@ -107,7 +107,7 @@ end
 
 %Testing 
  displayProgressFlag=1;
-[X_test, accuracy_test,res_test] = sc_main(test_sample(:,1:40), train_sample, 'l1magic', train_label, test_label(:,1:40), num_class_train, displayProgressFlag,rand_class);
+[X_test, accuracy_test,res_test] = sc_main(test_sample, train_sample, 'l1magic', train_label, test_label, num_class_train, displayProgressFlag,rand_class);
 
 
 
@@ -149,4 +149,4 @@ for i=1:num_class_train
 end
 
 
-save('/home/openset/Desktop/He_Zhang/src1/SRCEVT/Object/src_object/src_caltech_result_new3.mat')
+save('src_caltech_result_new3.mat')

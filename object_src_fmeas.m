@@ -1,10 +1,9 @@
 %clear all
-load('src_caltech_result_1.mat')
+load('src_caltech_result_new3.mat')
 addpath(genpath('/home/openset/Desktop/He_Zhang/src1/SRCEVT/Object/src_object'));
 
 %load('src_result_3.mat')
 %f_src=cell(1,test_class_out);
-
 F_src_final=[];
 predict_label=zeros(1,size(res_test,1));
 for i=1:size(res_test,1)
@@ -13,9 +12,9 @@ for i=1:size(res_test,1)
         predict_label(i)=1;
     end
 end
+%num_right=40
 
-
-      thereshold=0.09; % YOU HAVE TO specify it
+     thereshold=0.09; % YOU HAVE TO specify it
      weights=0.3;  %You have to specify it yourself
 %hopework_gpd=ks_stat_gpd1;%+weights*ks_stat_gpd_wrong;
 hopework_gpd=ks_stat_gpd1+weights*ks_stat_gpd_wrong;
