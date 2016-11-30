@@ -17,22 +17,22 @@ end
 
       thereshold=0.09; % YOU HAVE TO specify it
      weights=0.3;  %You have to specify it yourself
-hopework_gpd=ks_stat_gpd1;%+weights*ks_stat_gpd_wrong;
-hopework_weil1=ks_stat_gpd1+weights*ks_stat_weil1_wrong;
+%hopework_gpd=ks_stat_gpd1;%+weights*ks_stat_gpd_wrong;
+hopework_gpd=ks_stat_gpd1+weights*ks_stat_gpd_wrong;
 
 %accuracy=TP+TN/all
 ratio=1;
 
-true=hopework_weil1(1:num_right)<=thereshold;
+true=hopework_gpd(1:num_right)<=thereshold;
 true_positive=nnz(true==predict_label(1:num_right)');
 %true_positive=nnz(hopework_weil1(1:num_right)<=thereshold);
-true_negative=nnz(hopework_weil1(num_right+1:end)>thereshold)*ratio;
+true_negative=nnz(hopework_gpd(num_right+1:end)>thereshold)*ratio;
 %The negative one that been regarded as positive
-false_positive=nnz(hopework_weil1(num_right+1:end)<=thereshold)*ratio;
+false_positive=nnz(hopework_gpd(num_right+1:end)<=thereshold)*ratio;
 
 false_negative=num_right-true_positive;
 %Calculate Accuracy
-accuracy_our=(true_positive+true_negative)/(num_right+(size(test_sample,2)-num_right));
+accuracy_our=(true_positive+true_negative)/(num_right+(size(test_sample,2)-num_right))
 
 %Presion equals; ratio of correctly classified positive examples 
 Precision=true_positive/(true_positive+false_positive);
@@ -40,7 +40,7 @@ Precision=true_positive/(true_positive+false_positive);
 Recall=true_positive/(true_positive+false_negative);
 
 %Calculate F-measure
-F_measure_our=2*Precision*Recall/(Precision+Recall);
+F_measure_our=2*Precision*Recall/(Precision+Recall)
 openness=1-sqrt(2*num_class_train/(num_class_train+num_class_train+test_class_out))
 %end
 
